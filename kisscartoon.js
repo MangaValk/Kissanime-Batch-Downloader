@@ -8,8 +8,8 @@ var URL = window.location.origin
 // END CONFIG
 
 
-var episodeLinks = $('table.listing8515 a').map(function(i,el) { return $(el).attr('href'); });
-var episodeNames = $('table.listing8515 a').map(function(i,el) { return $.trim( $(el).html() ); });
+var episodeLinks = $('listing8515 a').map(function(i,el) { return $(el).attr('href'); });
+var episodeNames = $('listing8515 a').map(function(i,el) { return $.trim( $(el).html() ); });
 
 $.ajaxSetup({async:false});
 $.getScript(rootUrl + "/Scripts/asp.js");
