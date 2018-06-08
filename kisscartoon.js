@@ -36,6 +36,11 @@ console.log('Starting ' + siteName + ' Batch Downloader script...');
 var startEpisode;
 do {
 	startEpisode = Number(prompt("Enter episode (listing) number you want to start from", defaultText="1"));
+	if (episodeLinks.length == 0)
+	{
+		exit();
+	}
+	
 	if(startEpisode <= 0 || startEpisode > episodeLinks.length) {
 		alert("Episode number entered must be greater than 0 and lesser than total number of eps"); 
 	} else {
