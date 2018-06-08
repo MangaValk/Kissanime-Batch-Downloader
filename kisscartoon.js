@@ -3,7 +3,7 @@
 
 // CONFIG
 var siteName = "KissCartoon"
-var rootUrl = 'http://kisscartoon.ac'
+var rootUrl = 'https://kisscartoon.ac'
 var URL = window.location.origin
 // END CONFIG
 
@@ -36,9 +36,10 @@ console.log('Starting ' + siteName + ' Batch Downloader script...');
 var startEpisode;
 do {
 	startEpisode = Number(prompt("Enter episode (listing) number you want to start from", defaultText="1"));
-	if (episodeLinks.length == 0)
+	if (episodeLinks.length < 1 || startEpisode == 0)
 	{
 		exit();
+		break;
 	}
 	
 	if(startEpisode <= 0 || startEpisode > episodeLinks.length) {
@@ -51,6 +52,13 @@ do {
 var endEpisode;
 do {
 	endEpisode = Number(prompt("Enter episode (listing) number you want to end at", defaultText="2"));
+	
+	if (episodeLinks.length < 1 || endEpisode == 0)
+	{
+		exit();
+		break;
+	}
+	
 	if(endEpisode <= 0 || endEpisode > episodeLinks.length || endEpisode < startEpisode) {
 		alert("Episode number entered must be greater than 0 and lesser than total number of eps");
 	} else {
